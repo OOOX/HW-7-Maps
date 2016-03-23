@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MapDirectives">
+<head>
+    <meta charset="UTF-8">
+    <title>GoogleMapCtrl</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script src="app/code.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <style>
+    #map {
+    	width:500px;
+    	height:380px;
+    	display: block;
+    }
+    button {
+      padding: 5px;
+      font-size: 1.1em;
+      color: #fff;
+      text-transform: uppercase;
+      background-color: #213963;
+      border: none;
+    }
+    </style>
+</head>
+<body ng-controller="MapCtrl as mapctrl">
+  <div class="main">
+
+    <map id="map" center="mapctrl.mapOptions.centr" zoom="mapctrl.mapOptions.zoom"></map>
+    <p>Change zoom:</p>
+    <button ng-click="mapctrl.changeZoomUp()">Click Up</button>
+    <button ng-click="mapctrl.changeZoomDown()">Click Down</button>
+    <p>Current zoom: <span ng-bind="mapctrl.mapOptions.zoom"></span></p>
+
+  </div>
+</body>
+</html>
